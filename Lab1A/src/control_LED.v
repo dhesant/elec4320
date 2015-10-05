@@ -7,6 +7,6 @@ module control_LED
   output [7:0] show_value
 );
 
-//Insert your code to assign to output port
+assign show_value = input_value;
 
 endmodule
