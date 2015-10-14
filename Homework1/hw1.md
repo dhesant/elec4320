@@ -20,8 +20,23 @@ The best choice is a Gate Array
 
 ## 2)
 
-## 3)
-### a)
+## 3) ### a) #### Programmable Elements
+Each AND has 8 inputs, there are 4 outputs.
+=> 8 x 4 + 4 = 36 programmable elements in the typical circuit.
 
+#### Equivalant Gates
+Each AND gate is an 8-input AND gate  = 4 equivalent gates.
+The OR gate is a 4-input OR gate = 2 equivalent gates.
+There is 1 NOT gate at the end of the circuit.
+=> 0.5+2 
 
 ### b)
+#### Programmable Elements
+Each AND gate is a 6-input AND gate.
+Each OR gate is a 8-input OR gate.
+=> 6 x 8 + 8 x 4 = 80 programmable elements in the typical circuit.
+
+#### Equivalent Gates
+Each AND gate is a 6-input AND gate = 3 equivalent gates.
+Each OR gate is a 8-input OR gate = 4 equivalent gates.
+=> 3 x 8 + 4 x 4 = 40 equivalent gates.
