@@ -1,0 +1,22 @@
+
+#Created by Constraints Editor (xc5vlx110t-ff1136-2) - 2014/08/01
+NET "sysclk" TNM_NET = sysclk;
+TIMESPEC TS_sysclk = PERIOD "sysclk" 10 ns HIGH 50%;
+#pin2ucf - Mon Aug 04 12:08:26 2014
+#The following constraints were newly added
+NET "speaker_out" LOC = G30;
+NET "sysclk" LOC = AH15;
+NET "led_out<0>" LOC = AG12;
+NET "led_out<1>" LOC = E8;
+NET "led_out<2>" LOC = AF13;
+NET "led_out<3>" LOC = AG23;
+NET "led_out<4>" LOC = AF23;
+NET "key_input<0>" LOC = U25;
+NET "key_input<1>" LOC = AG27;
+NET "key_input<2>" LOC = AF25;
+NET "key_input<3>" LOC = AF26;
+NET "key_input<4>" LOC = AE27;
+NET "key_input<5>" LOC = AE26;
+NET "key_input<6>" LOC = AC25;
+NET "key_input<7>" LOC = V8;
+NET "key_input<8>" LOC = U8;
