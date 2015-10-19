@@ -19,13 +19,13 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module pwm_controller( clk, slow_rate, speaker_out );
-   input	clk;				// input clk run at 1MHz
-   input [12:0] slow_rate;
-   output 	speaker_out;
+   input				clk;				// input clk run at 1MHz
+   input [12:0] 	slow_rate;
+   output 			speaker_out;
 
-   reg [12:0] 	counter;
-   reg 		speaker;
-   reg [12:0] 	slow_rate_old;
+   reg [12:0] 		counter;
+   reg 				speaker;
+   reg [12:0] 		slow_rate_old;
 
    initial begin
       counter = 0;
