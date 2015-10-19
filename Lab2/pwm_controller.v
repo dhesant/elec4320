@@ -35,17 +35,17 @@ module pwm_controller( clk, slow_rate, speaker_out );
 
    always @(posedge clk) begin
       if(slow_rate_old != slow_rate) begin
-	 counter <= 0;
-	 speaker <= 1'b0;
-	 slow_rate_old <= slow_rate;
+			counter <= 0;
+			speaker <= 1'b0;
+			slow_rate_old <= slow_rate;
       end
       if(counter == slow_rate && slow_rate != 0) begin
-	 speaker <= ~speaker;
-	 counter <= 0;
+			speaker <= ~speaker;
+			counter <= 0;
       end else if (slow_rate != 0) begin
-	 counter <= counter + 1;
+			counter <= counter + 1;
       end else begin
-	 counter <= 0;
+			counter <= 0;
       end
    end
 
