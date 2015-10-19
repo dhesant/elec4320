@@ -1,7 +1,7 @@
 
 #Created by Constraints Editor (xc5vlx110t-ff1136-2) - 2014/08/01
 NET "sysclk" TNM_NET = sysclk;
-TIMESPEC TS_sysclk = PERIOD "sysclk" 10 ns HIGH 50%;
+TIMESPEC TS_sysclk = PERIOD "sysclk" 1 ns HIGH 50%;
 #pin2ucf - Mon Aug 04 12:08:26 2014
 #The following constraints were newly added
 NET "speaker_out" LOC = G30;
