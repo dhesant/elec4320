@@ -18,19 +18,17 @@ $6k x 1 wafer + $400k + $10k x 30 weeks = $706k
 
 The best choice is a Gate Array
 
-## 2)
-
-## 3)???????
+## 3)
 ### a)
 #### Programmable Elements
-Each AND has 8 inputs, there are 4 outputs.  
-=> 8 x 4 + 4 = 36 programmable elements in the typical circuit.
+Each AND has 8 inputs, there are 4 AND gates per output, and there are 4 outputs.  
+=> (8 x 4) x 4  = 128 programmable elements in the typical circuit.
 
 #### Equivalant Gates
 Each AND gate is an 8-input AND gate  = 4 equivalent gates.
 The OR gate is a 4-input OR gate = 2 equivalent gates.
-There is 1 NOT gate at the end of the circuit.
-=> 0.5+2 
+There is 1 NOT gate at the end of the circuit = 0.5 equivalent gates.
+=> (4 x 4 + 2 + 0.5) x 4 = 74 equivalent gates.
 
 ### b)
 #### Programmable Elements
