@@ -19,34 +19,32 @@
    // This slow clock is at 1 MHz while system clock is at 100 MHz
 
    initial begin
-      # 500 
-	repeat(100)@(posedge clk)							// This means that after 100 positive clock edges, the assignment to key_input is made (at 500 + 100*10 =  1500 ns)
+     # 500 
+     #10000000
 	  key_input <= {2'b00, 7'b0000001}; 
       $display("key_input = %b ", key_input);	
-      repeat(100)@(posedge clk)							// This assignment is made at 1500 + 1000 = 2500 ns.
-	key_input <= {2'b01, 7'b0000001}; 
+     #10000000
+	key_input <= {2'b00, 7'b0000001}; 
       $display("key_input = %b ", key_input);	
-      repeat(100)@(posedge clk)							// This assignment is made at 2500 + 1000 = 3500 ns; Similarly for the rest
+     #10000000
 	key_input <= {2'b01, 7'b0000010};
       $display("key_input = %b ", key_input);
-      repeat(100)@(posedge clk)
+     #10000000
 	key_input <= {2'b01, 7'b0000100};
       $display("key_input = %b ", key_input);
-      repeat(100)@(posedge clk)
-	key_input <= {2'b01, 7'b0001000};
+     #10000000
+	key_input <= {2'b10, 7'b0001000};
       $display("key_input = %b ", key_input);
-      repeat(100)@(posedge clk)
-	key_input <= {2'b01, 7'b0010000};
+     #10000000
+	key_input <= {2'b10, 7'b0010000};
       $display("key_input = %b ", key_input);
-      repeat(100)@(posedge clk)
-	key_input <= {2'b01, 7'b0100000};
+     #10000000
+	key_input <= {2'b00, 7'b0100000};
       $display("key_input = %b ", key_input);
-      repeat(100)@(posedge clk)
-	key_input <= {2'b01, 7'b1000000};
+     #10000000
+	key_input <= {2'b11, 7'b1000000};
       $display("key_input = %b ", key_input);
+    #10000000 $finish;
    end
-
-   initial
-     #9000000 $finish;
 
 endmodule
