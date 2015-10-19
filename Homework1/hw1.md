@@ -18,6 +18,13 @@ $6k x 1 wafer + $400k + $10k x 30 weeks = $706k
 
 The best choice is a Gate Array
 
+## 2)
+Files attached:
+- 4bitgray.v for Verilog Code
+- gray_counter_tb.v for testbench
+- presim.png for behavorial simulation
+- postsim.png for post-route simulation
+
 ## 3)
 ### a)
 #### Programmable Elements
