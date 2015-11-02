@@ -1,13 +1,15 @@
 `include "define.v"
 
-module cpu(clk, reset, run, in, cs, pcout, irout, qtop, abus, dbus, out);
+module cpu(c_in, reset, run, in, cs, pcout, irout, qtop, abus, dbus, out, locked_out, clk_rst);
 
-  input clk,reset,run;
+  input c_in,reset,run,clk_rst;
   input [15:0] in;
+  output locked_out;
   output [2:0] cs;
   output [15:0] irout, qtop, dbus, out;
   output [11:0] pcout, abus;
   wire [15:0] qnext, ramout, aluout;
+  wire clk;
   reg [11:0] abus;
   reg halt, cont, pcinc, push, pop, abus2pc, dbus2ir, dbus2qtop, dbus2ram, dbus2obuf, pc2abus, ir2abus, ir2dbus, qtop2dbus, alu2dbus, ram2dbus, in2dbus;
 
@@ -18,6 +20,16 @@ module cpu(clk, reset, run, in, cs, pcout, irout, qtop, abus, dbus, out);
   alu alu0(.a(qtop), .b(qnext), .f(irout[4:0]), .s(aluout));
   ram #(16,12,4096) ram0(.clk(clk), .load(dbus2ram), .addr(abus[11:0]), .d(dbus), .q(ramout));
   counter #(16) obuf0(.clk(clk), .reset(reset), .load(dbus2obuf), .inc(1'b0), .d(dbus), .q(out));
+
+	// Instantiate the module
+	dcm clk0 (
+		 .CLKIN_IN(c_in),
+		 .RST_IN(clk_rst),
+		 .CLKFX_OUT(clk),
+		 .CLKIN_IBUFG_OUT(), 
+		 .CLK0_OUT(), 
+		 .LOCKED_OUT(locked_out)
+		 );
   
   always @(pc2abus or ir2abus or pcout or irout)
     if(pc2abus) abus <= pcout;

@@ -12,4 +12,37 @@ module state(clk,reset,run,cont,halt,cs);
 
 //Put your implementation here
 
+	initial begin
+		cs = `IDLE;
+	end
+
+	always @(posedge clk) begin
+		case (cs)
+			`IDLE:
+				if (reset) begin
+					cs = `IDLE;
+				end
+				else if (run) begin
+					cs = `FETCHA;
+				end
+			`FETCHA:
+				cs = `FETCHB;
+			`FETCHB:
+				cs = `EXECA;
+			`EXECA:
+				if (halt) begin
+					cs = `IDLE;
+				end
+				else begin
+					if (cont) begin
+						cs = `EXECB;
+					end
+					else begin
+						cs = `FETCHA;
+					end
+				end
+			`EXECB:
+				cs = `FETCHA;
+		endcase
+	end					
 endmodule
