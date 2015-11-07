@@ -39,11 +39,19 @@ module main( key_input, sysclk, speaker_out, led_out );
 		       .clk(sysclk)
 		       );
 
+/*
    keytofrequency ktof(
 		       .key_code(key_code),
 		       .clk(sysclk),
 		       .slow_rate(slow_rate)
 		       );
+*/
+
+	bram_decoder ktof (
+				.addra(key_code),
+				.douta(slow_rate),
+				.clka(sysclk)
+				);
 
    clk_divider clk_divider(
 			   .sysclk(sysclk),

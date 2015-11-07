@@ -23,8 +23,8 @@ module keytofrequency( key_code, clk, slow_rate );
    input 	clk;
    output [12:0] slow_rate;
    reg [12:0] 	 slow;
-
-   always @ (posedge clk)
+	
+	always @ (posedge clk)
      case (key_code)
        0: slow <= 0;							// 0: frequency = 0;
        1: slow <= 'D1909;						//	1: frequency = 'D262;

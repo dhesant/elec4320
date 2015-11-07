@@ -5,7 +5,7 @@ module Top_TB_Lab2 ();
    wire       speaker_out_w;
    wire [4:0] led_out_w;
 
-   TestBench_Lab2 TestBench_Lab2 _
+   TestBench_Lab2 TestBench_Lab2 (
        .clk(clk_w),
        .key_input(key_input_w)
        );
