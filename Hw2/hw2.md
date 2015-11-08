@@ -4,11 +4,11 @@
 ## 1)
 ### a)
 Implementation 1:
-1 CLB's and 1 delay for every bit
+1 CLB's and 1 delay for every bit.  
 => Total of 8 Spartan CLB's and 8 CLB delays.
 
 Implementation 2:
-1.5 CLB's and 0.5 delays for every bit.
+1.5 CLB's and 0.5 delays for every bit.  
 => Total of 12 Spartan CLB's and 4 CLB delas.
 
 ### b)
@@ -90,3 +90,5 @@ For a 4-bit x 4-bit multiplier, there are 4x4 1-bit multiplication (AND) terms, 
 | 1  | 0 | 1 | 1 |
 | 1  | 1 | 0 | 1 |
 | 1  | 1 | 1 | 1 |
+
+![alt text](https://raw.githubusercontent.com/dhesant/elec4320/master/Hw2/q3.png "Routing Diagram")
