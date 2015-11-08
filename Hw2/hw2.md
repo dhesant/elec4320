@@ -9,18 +9,18 @@ Implementation 1:
 
 Implementation 2:
 1.5 CLB's and 0.5 delays for every bit.  
-=> Total of 12 Spartan CLB's and 4 CLB delas.
+=> Total of 12 Spartan CLB's and 4 CLB delays.
 
 ### b)
-0.5 CLB's and 
+0.5 CLB's for every bit. 1 CLB delay in total.  
+=> Total of 4 CLB's and 1 CLB delay.
 
 ### c)
-For a 4-bit x 4-bit multiplier, there are 4x4 1-bit multiplication (AND) terms, and 6 addition terms required (of different length).
+For a 4-bit x 4-bit multiplier, there are 16 (4x4) AND gates (1-bit multiplication), 4 1-bit half adders, and 8 1-bit Full adders. This is equivalent to 28 CLB's.
 
 ## 2)
 ### a)
-
-
+ 
 
 
 ### b)
