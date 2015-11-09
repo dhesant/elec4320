@@ -23,6 +23,10 @@ For a 4-bit x 4-bit multiplier, there are 16 (4x4) AND gates (1-bit multiplicati
 ![alt text](https://raw.githubusercontent.com/dhesant/elec4320/master/Hw2/q2_eq.png "Equations")
 
 ### b)
+![alt text](https://raw.githubusercontent.com/dhesant/elec4320/master/Hw2/q2_delay.png "Delay Graph")
+![alt text](https://raw.githubusercontent.com/dhesant/elec4320/master/Hw2/q2_area.png "Area Graph")
+
+From the first graph, it is better to have N = 5 to have the least delay in the circuit, and from the second graph, it is better to have N = 5 to minimize the area needed for the circuit.
 
 ### c)
 
