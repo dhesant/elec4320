@@ -29,8 +29,8 @@ Total Delay = (1 + (M - N)/(N - 1)) x c1 x log(N)
 Total Area = (1 + (M - N)/(N - 1)) x c2 x N  
 
 ### b)
-![alt text](q2_delay.png "Delay Graph")\
-![alt text](q2_area.png "Area Graph")\
+![alt text](q2_delay.png "Delay Graph")
+![alt text](q2_area.png "Area Graph")
 
 From the first graph, it is better to have N = 5 to have the least delay in the circuit, and from the second graph, it is better to have N = 5 to minimize the area needed for the circuit. However, if M <= 3, it is better to use a 3-input LUT, and if M = 4, it is better to use a 4-input LUT, because having the extra capacity of a 5-input LUT in both scenearios just increases the delay and area required unecessarily.
 
@@ -106,4 +106,4 @@ Currently, the LUT's are in the cascaded system, however, by rearranging it into
 | 1  | 1 | 0 | 1 |
 | 1  | 1 | 1 | 1 |
 
-![alt text](q3.png "Routing Diagram")\
+![alt text](q3.png "Routing Diagram")
