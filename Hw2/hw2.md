@@ -20,8 +20,7 @@ For a 4-bit x 4-bit multiplier, there are 16 (4x4) AND gates (1-bit multiplicati
 
 ## 2)
 ### a)
- 
-
+![alt text](https://raw.githubusercontent.com/dhesant/elec4320/master/Hw2/q2_eq.png "Equations")
 
 ### b)
 
