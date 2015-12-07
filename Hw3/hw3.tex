@@ -19,25 +19,30 @@
 
 \section*{Question 1}
 a)
-  \includegraphics[width=\linewidth]{q1_mux.png}
+\begin{center}
+  \includegraphics[width=0.7\linewidth]{q1_mux.png}
+\end{center}
+The design takes advantage of the structure of multiplexer, where one 2-input multiplexer can be mapped to a single 3-input LUT, shown in the following truth table. By using the 2 3-LUT's as 2-input multiplexers, a two-tier 4-input multiplexer can be made using only one block.
+\begin{center}
+\begin{tabular}{ | c c c | c | }
+  \hline
+  S & A\textunderscript{0} & A\textunderscript{1} & O \\
+  \hline
+  0 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 1 \\
+  0 & 1 & 0 & 0 \\
+  0 & 1 & 1 & 1 \\
+  1 & 0 & 0 & 0 \\
+  1 & 0 & 1 & 0 \\
+  1 & 1 & 0 & 1 \\
+  1 & 1 & 1 & 1 \\
+  \hline
+\end{tabular}\\
+\end{center}
 
 b)\\*
-  \includegraphics[width=\linewidth]{q1_lut.png}\\\\
-  2-input MUX's are created using a 3-LUT that use the following truth table.\\\\
-  \begin{tabular}{ | c c c | c | }
-    \hline
-    S & A & B & O \\
-    \hline
-    0 & 0 & 0 & 0 \\
-    0 & 0 & 1 & 1 \\
-    0 & 1 & 0 & 0 \\
-    0 & 1 & 1 & 1 \\
-    1 & 0 & 0 & 0 \\
-    1 & 0 & 1 & 0 \\
-    1 & 1 & 0 & 1 \\
-    1 & 1 & 1 & 1 \\
-    \hline
-  \end{tabular}
+\includegraphics[width=\linewidth]{q1_lut.png}\\\\
+
 \section*{Question 2}
 System Generator schematic diagram:\\*
 \includegraphics[width=\linewidth]{q2/model.png}\\
@@ -94,19 +99,19 @@ According to the new design, in addition the 2 multipliers and 1 adder needed to
 
 b)
 \begin{lstlisting}[showstringspaces=false]
-#include "ap_cin.h"
+  #include "ap_cin.h"
 
-typedef uint4 t_data4;
-typedef uint5 t_data5;
-typedef uint8 t_data8;
+  typedef uint4 t_data4;
+  typedef uint5 t_data5;
+  typedef uint8 t_data8;
 
-t_data5 A[10];
-t_data8 B[10], C[10];
-t_data4 i;
+  t_data5 A[10];
+  t_data8 B[10], C[10];
+  t_data4 i;
 
-for (i = 0; i < 10; ++i) {
-  C[i] = A[i] + B[i];
-}
+  for (i = 0; i < 10; ++i) {
+    C[i] = A[i] + B[i];
+  }
 \end{lstlisting}
 
 The new code uses less area because of the reduced width of all the integers. Instead of having to create a 32-bit adder on the FPGA, which will require a lot of LUT's, all that is needed now is at 8-bit LUT adder, since the output value will never exceeed the 8-bit limit of 255. Also, the comparator needed to check the flow of the loop can be made smaller, since it is now a 4-bit integer instead of a 32-bit integer. In addition, since the arrays are also a lot smaller, they use less memory space than before, allowing them to be reshaped to fit into less memory.
