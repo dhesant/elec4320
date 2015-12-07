@@ -20,7 +20,6 @@ Carry Logic Approach:
 For a 4-bit x 4-bit multiplier, there are 16 (4x4) AND gates (1-bit multiplication), 3 4-bit adders, this results in a different number of CLB's depending on which adder approach is taken.  
 For the conventional cascaded approach, this is equal to 16 + (3 x 4) = 28 CLB's.  
 For the 5-input LUT approach, this is equal to 16 + (3 x 6) = 34 CLB's.  
-For the carry logic approach, this is equal to 16 + (3 x 2) = 22 CLB's.
 
 ## 2)
 ### a)
