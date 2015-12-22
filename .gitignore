@@ -38,3 +38,5 @@
 #ignore OS noise
 */Thumbs.db
 */.DS_Store
+
+Project/
